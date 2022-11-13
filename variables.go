@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // we do not have ; here!!
-func main() {
+func var_main() {
 	//Variables
 	/*
 		var lol string = "salam" => specify explicitly the type , is not a must
@@ -17,5 +17,7 @@ func main() {
 	fmt.Println(lol)
 	fmt.Println(lol2)
 	fmt.Println(lol3)
+	a, b := 2, 3
+	fmt.Println(a, b)
 
 }
