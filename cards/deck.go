@@ -4,7 +4,9 @@ package main
 import (
 	"fmt" // no commas or anything here!
 	"io/ioutil"
+	"math/rand"
 	"strings"
+	"time"
 )
 
 // create a new type of 'deck'
@@ -58,4 +60,20 @@ func readFromFile(fileName string) deck {
 	stringified := string(bs)
 	cards := strings.Split(stringified, ",")
 	return deck(cards)
+}
+
+// lesssons : random number generation, shuffle list, work with time
+func (d deck) shuffle() {
+	//set the seed
+	random_number_gen := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	for i := range d {
+		new_position := random_number_gen.Intn(len(d))
+		// tmp := d[i]
+		// d[i] = d[new_position]
+		// d[new_position] = tmp
+
+		//lets use one line swap here :
+		d[i], d[new_position] = d[new_position], d[i]
+	}
 }

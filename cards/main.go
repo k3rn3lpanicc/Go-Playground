@@ -7,6 +7,9 @@ import (
 
 func main() {
 	newCards := newDeck()
+	newCards.print()
+	newCards.shuffle()
+	newCards.print()
 	hand, remaining := newCards.create_hand(2)
 	hand.print()
 	remaining.print()
